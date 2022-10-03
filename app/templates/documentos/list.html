@@ -1,0 +1,89 @@
+{% extends "admin/base.html" %}
+{% load render_table from django_tables2 %}
+
+
+{% block content %}
+
+
+<div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-6">
+                        <div class="col-auto col-sm-3">
+                            <h2 class="m-0">Documentos</h2>
+                        </div>
+                        <div class="col-auto col-sm-9">
+                            
+    <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="/admin/" class="active"><i class="fa fa-tachometer-alt"></i> Início</a></li>
+        <li class="breadcrumb-item">Processar Documentos</li>
+    </ol>
+    </div>
+  </div>
+  </div>
+ </div>
+<div id="content-main" class="col-12">
+  <div class="container-fluid">
+    <section id="content" class="content">
+      <div class="row">
+        <div class="col-12">
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <h4 class="card-title">Selecione cliente para modificar</h4>
+              
+              <div class="card-tools form-inline">
+                
+                <form
+                  id="changelist-search"
+                  class="form-inline mt-2"
+                  method="GET"
+                ></form>
+              </div>
+            </div>
+
+            <div class="card-body">
+  
+                <div id="content-main">
+                  <div class="module" id="changelist">
+                    <div class="row">
+                      <div class="col-12">
+                      
+                        <div class="row">
+                        
+                          <div class="col-12 col-sm-8"></div>
+                          <div class="col-12 col-sm-4">
+                            <a
+                              href="/admin/app/cliente/add/"
+                              class="btn btn-outline-success float-right"
+                            >
+                              <i class="fa fa-plus-circle"></i> &nbsp; Adicionar cliente
+                            </a>
+                          </div>
+                        </div>
+                        <hr />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                      {% render_table table %}
+
+                      </div>
+
+                      <div class="col-7">
+                        <ul
+                          class="pagination pagination-sm m-0 float-right"
+                        ></ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+          <br class="clear" />
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+ 
+{% endblock %}
